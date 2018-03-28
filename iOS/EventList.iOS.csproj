@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{CB107974-8837-465A-8C6D-D3DE91F14D7F}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EventList.iOS</RootNamespace>
+    <AssemblyName>EventListiOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>20425</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchSdkVersion>10.3</MtouchSdkVersion>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignProvision>
+    </CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: jivar.ruchi@gmail.com (W4KKXG65VA)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchSdkVersion>11.1</MtouchSdkVersion>
+    <CodesignProvision>iOS Team Provisioning Profile: com.seefat.TestApp</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.1\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.iOS">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.1\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsToolkit">
+      <HintPath>..\packages\FormsToolkit.1.1.18\lib\Xamarin.iOS10\FormsToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsToolkit.iOS">
+      <HintPath>..\packages\FormsToolkit.1.1.18\lib\Xamarin.iOS10\FormsToolkit.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>..\packages\Humanizer.1.37.7\lib\portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\packages\Plugin.Permissions.1.2.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.1.2.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Plugin.Calendars.Abstractions">
+      <HintPath>..\packages\CClarke.Plugin.Calendars.0.6.0-beta\lib\Xamarin.iOS10\Plugin.Calendars.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Calendars">
+      <HintPath>..\packages\CClarke.Plugin.Calendars.0.6.0-beta\lib\Xamarin.iOS10\Plugin.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.Ext">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Client.3.0.3\lib\Xamarin.iOS10\Microsoft.WindowsAzure.Mobile.Ext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.3.0.3\lib\portable-win+net45+wp8+wpa81+monotouch10+monoandroid10+xamarinios10\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL">
+      <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.Ext">
+      <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.Ext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Client.3.0.3\lib\Xamarin.iOS10\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmHelpers">
+      <HintPath>..\packages\Refractored.MvvmHelpers.1.3.0\lib\netstandard1.0\MvvmHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.DataBinding">
+      <HintPath>..\packages\Realm.DataBinding.1.1.0\lib\Xamarin.iOS10\Realm.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\packages\Remotion.Linq.2.1.1\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\packages\Realm.Database.1.5.0\lib\netstandard1.4\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\packages\Realm.1.5.0\lib\netstandard1.4\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.6\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.6\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.6\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.6\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.3.4.6\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.InstanceID">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Core">
+      <HintPath>..\packages\Xamarin.Google.iOS.Core.3.0.3.3\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.SignIn">
+      <HintPath>..\packages\Xamarin.Google.iOS.SignIn.4.0.1.2\lib\Xamarin.iOS10\Google.SignIn.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text.XamarinIOS">
+      <HintPath>..\Components\servicestacktext-3.9.61.3\lib\ios-unified\ServiceStack.Text.XamarinIOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ToastIOS">
+      <HintPath>..\Components\ToastIOS-1.6\lib\ios-unified\ToastIOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\packages\SQLite.Net.Core-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
+      <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\Xamarin.iOS10\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps">
+      <HintPath>..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\Xamarin.iOS10\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Messaging.4.0.0\lib\Xamarin.iOS10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\packages\Xam.Plugins.Messaging.4.0.0\lib\Xamarin.iOS10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.269-pre2\lib\Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.269-pre2\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView.iOS">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView.Platform">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.XamForms.PullToRefresh">
+      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.2.0.0-alpha10\lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.XamForms.PullToRefresh.iOS">
+      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.2.0.0-alpha10\lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyboardOverlap.Forms.Plugin.iOSUnified">
+      <HintPath>..\packages\Xam.Plugins.Forms.KeyboardOverlap.1.0.0.3\lib\Xamarin.iOS10\KeyboardOverlap.Forms.Plugin.iOSUnified.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core">
+      <HintPath>..\packages\PInvoke.Windows.Core.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32">
+      <HintPath>..\packages\PInvoke.Kernel32.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt">
+      <HintPath>..\packages\PInvoke.BCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt">
+      <HintPath>..\packages\PInvoke.NCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.NCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.2.8\lib\dotnet\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\xamarinios10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth">
+      <HintPath>..\packages\Xamarin.Auth.1.5.0.3\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json" />
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms">
+      <HintPath>..\packages\ZXing.Net.Mobile.Forms.2.1.12\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms.iOS">
+      <HintPath>..\packages\ZXing.Net.Mobile.Forms.2.1.12\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1-beta1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventList\EventList.csproj">
+      <Project>{B4FA2EFE-8F6B-4ECA-97F4-16BAC91C625B}</Project>
+      <Name>EventList</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Attendees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+    <None Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\background_splash.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Helpers\LaunchTwitter.cs" />
+    <Compile Include="Helpers\Toaster.cs" />
+    <Compile Include="Renderers\NonScrollableListViewRenderer.cs" />
+    <Compile Include="Renderers\SelectedTabPageRenderer.cs" />
+    <Compile Include="Renderers\TextViewValue1Renderer.cs" />
+    <Compile Include="Services\FileWriter.cs" />
+    <Compile Include="Services\LocalNotificationManager.cs" />
+    <Compile Include="Notifications\UserNotificationCenterDelegate.cs" />
+    <Compile Include="Extensions\DateExtensions.cs" />
+    <Compile Include="Services\DeviceService.cs" />
+    <Compile Include="Renderers\SettingsPageRenderer.cs" />
+    <Compile Include="Renderers\SigninPageRenderer.cs" />
+    <Compile Include="Renderers\RoundStackRenderer.cs" />
+    <Compile Include="Services\GoogleService.cs" />
+    <Compile Include="Renderers\ChatRoomPageRenderer.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Services\InputAlertService.cs" />
+    <Compile Include="Renderers\CustomWebViewRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="ToastIOS">
+      <Version>1.6</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="servicestacktext">
+      <Version>3.9.61.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="CsvFiles\Category.csv" />
+    <BundleResource Include="CsvFiles\Room.csv" />
+    <BundleResource Include="CsvFiles\Session.csv" />
+    <BundleResource Include="CsvFiles\Speaker.csv" />
+    <BundleResource Include="CsvFiles\SponserLevel.csv" />
+    <BundleResource Include="CsvFiles\Sponser.csv" />
+    <BundleResource Include="CsvFiles\FeaturedEvent.csv" />
+    <BundleResource Include="CsvFiles\MiniHack.csv" />
+    <BundleResource Include="Resources\setting.png" />
+    <BundleResource Include="Resources\event.png" />
+    <BundleResource Include="Resources\event%402x.png" />
+    <BundleResource Include="Resources\event_selected.png" />
+    <BundleResource Include="Resources\event_selected%402x.png" />
+    <BundleResource Include="Resources\feed.png" />
+    <BundleResource Include="Resources\feed%402x.png" />
+    <BundleResource Include="Resources\feed_selected.png" />
+    <BundleResource Include="Resources\feed_selected%402x.png" />
+    <BundleResource Include="Resources\hack.png" />
+    <BundleResource Include="Resources\hack%402x.png" />
+    <BundleResource Include="Resources\hack_selected.png" />
+    <BundleResource Include="Resources\hack_selected%402x.png" />
+    <BundleResource Include="Resources\session.png" />
+    <BundleResource Include="Resources\session%402x.png" />
+    <BundleResource Include="Resources\session_selected.png" />
+    <BundleResource Include="Resources\session_selected%402x.png" />
+    <BundleResource Include="Resources\setting%402x.png" />
+    <BundleResource Include="Resources\search%402x.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\blue_circle%402x.png" />
+    <BundleResource Include="Resources\blue_circle.png" />
+    <BundleResource Include="Resources\disclosure.png" />
+    <BundleResource Include="Resources\launch%402x.png" />
+    <BundleResource Include="Resources\launch%403x.png" />
+    <BundleResource Include="Resources\toolbar_overflow.png" />
+    <BundleResource Include="Resources\toolbar_overflow%402x.png" />
+    <BundleResource Include="Resources\toolbar_overflow%403x.png" />
+    <BundleResource Include="Resources\profile_pic_shadow.png" />
+    <BundleResource Include="Resources\profile_pic_shadow%402x.png" />
+    <BundleResource Include="Resources\profile_pic_shadow%403x.png" />
+    <BundleResource Include="Resources\baboon.jpg" />
+    <BundleResource Include="Resources\add.png" />
+    <BundleResource Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\SplashScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CommonEventImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\EvolveFeed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\EvolveFeedBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Favorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FeaturedEvents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GoogleLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MiniHacks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MyNetwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sessions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Speakers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evaluation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\smily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChatMessageText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginWithGoogleBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginWithRelamBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogonWithFacebookBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SplashScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TitleBackgoundImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets')" />
+  <Import Project="..\packages\Realm.Database.1.5.0\build\Realm.Database.targets" Condition="Exists('..\packages\Realm.Database.1.5.0\build\Realm.Database.targets')" />
+  <Import Project="..\packages\Realm.1.5.0\build\Realm.targets" Condition="Exists('..\packages\Realm.1.5.0\build\Realm.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.SignIn.4.0.1.2\build\Xamarin.Google.iOS.SignIn.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.SignIn.4.0.1.2\build\Xamarin.Google.iOS.SignIn.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets')" />
+</Project>

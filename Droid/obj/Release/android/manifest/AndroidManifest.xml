@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0" package="com.pht.conference" android:installLocation="auto" android:versionCode="1">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="15" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_CALENDAR" />
+  <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <application android:label="EventList" android:name="md5a3dbd8ab694d8ced07450975887a0f91.MainApplication" android:allowBackup="true" android:icon="@drawable/icon">
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyC_tNtmaVpiNNeevqZ_u7sN5n176FeRDXM" />
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="EventList.Droid" android:theme="@style/MyTheme" android:name="md5a3dbd8ab694d8ced07450975887a0f91.MainActivity" />
+    <activity android:noHistory="true" android:theme="@style/SplashTheme" android:name="md564f01e225925e9f3843c7f2371158b17.SplashActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <receiver android:name="md58812efaed698f3e4d594aa8b9269ecb9.AlarmReceiver" />
+    <activity android:label="Web Authenticator" android:name="md5901e742fdf284ed0df9a9602f1963168.FormAuthenticatorActivity" />
+    <activity android:label="Web Authenticator" android:name="md5901e742fdf284ed0df9a9602f1963168.WebAuthenticatorActivity" />
+    <service android:name="md59f70a99687498e7ba187118950981d26.KeepAliveService" />
+    <activity android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" android:name="md5bbb8e5d2928631fa7276827c449c8050.ZxingActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.pht.conference.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:name="net.hockeyapp.android.UpdateActivity" />
+    <activity android:name="net.hockeyapp.android.FeedbackActivity" android:windowSoftInputMode="adjustResize|stateVisible" />
+    <activity android:name="net.hockeyapp.android.PaintActivity" />
+    <activity android:name="net.hockeyapp.android.LoginActivity" />
+    <activity android:name="net.hockeyapp.android.ExpiryInfoActivity" />
+    <activity android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:excludeFromRecents="true" android:exported="false" />
+    <!--Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.-->
+    <service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:exported="true" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+    <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:exported="false" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+  </application>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <meta-data android:name="android.support.VERSION" android:value="25.3.1" />
+  <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+</manifest>

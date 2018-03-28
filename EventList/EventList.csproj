@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4FA2EFE-8F6B-4ECA-97F4-16BAC91C625B}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EventList</RootNamespace>
+    <AssemblyName>EventList</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="Images\error.png" />
+    <EmbeddedResource Include="Images\star_outline.png" />
+    <EmbeddedResource Include="Images\star_selected.png" />
+    <EmbeddedResource Include="Images\success.png" />
+    <EmbeddedResource Include="Cells\EventHeader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeaderDivider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SectionDivider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FooterDivider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Sessions\SessionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MiniHacks\MiniHacksPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Events\EventListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Events\EventDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Sessions\SessionDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Speakers\SpeakerDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Sessions\FeedbackPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LabelSection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\TweetCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\SessionCellView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MiniHacks\MiniHacksDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\MiniHackCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\SpeakerCellView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Android\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Home\FeedsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Favorites\FavoritesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Feedback\RatingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\checkBox.png" />
+    <EmbeddedResource Include="Images\uncheckbox.png" />
+    <EmbeddedResource Include="Pages\Chat\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Chat\UsersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\setting.png" />
+    <EmbeddedResource Include="Controls\FeedsLabelSection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CommonEvents\CommonEventListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\EventCategoryCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\InfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Schedule\SchedulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\CodeOfConductPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Sponsors\SponsorsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Sponsors\SponsorDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\SponsorCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\WifiInformationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\VenuePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\FloorMap.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\FloorMapsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Info\EvaluationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Speakers\SpeakersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Speakers\AttendeesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Speakers\AttendeeDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Chat\ChatRoomPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CommonEvents\MyNetworks.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\QRCodeCellView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Chat\GoogleLogin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CommonEvents\QRCodeDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cells\POIHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CommonEvents\POISubCategoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CommonEvents\POIItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AlternatingListView.cs" />
+    <Compile Include="Helpers\CustWebViewRenderer.cs" />
+    <Compile Include="Helpers\GoogleViewModel.cs" />
+    <Compile Include="Models\FacebookProfile.cs" />
+    <Compile Include="Models\GoogleProfile.cs" />
+    <Compile Include="Pages\Accounts\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Chat\LoginWithRealmPage.xaml.cs">
+      <DependentUpon>LoginWithRealmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Events\EventPage.xaml.cs">
+      <DependentUpon>EventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Windows\MenuPageUWP.xaml.cs">
+      <DependentUpon>MenuPageUWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Windows\RootPageWindows.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FacebookServices.cs" />
+    <Compile Include="Services\GoogleServices.cs" />
+    <Compile Include="Util\CommonUtility.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
+    <Compile Include="Models\BaseDataObject.cs" />
+    <Compile Include="Models\FeaturedEvent.cs" />
+    <Compile Include="Models\Sponsor.cs" />
+    <Compile Include="Models\SponsorLevel.cs" />
+    <Compile Include="Extensions\EventExtensions.cs" />
+    <Compile Include="Store\EventStore.cs" />
+    <Compile Include="Store\BaseStore.cs" />
+    <Compile Include="Interfaces\IBaseStore.cs" />
+    <Compile Include="Interfaces\IEventStore.cs" />
+    <Compile Include="ViewModels\FacebookViewModel.cs" />
+    <Compile Include="ViewModels\GoogleViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Interfaces\IStoreManager.cs" />
+    <Compile Include="Extensions\DateTimeExtenstions.cs" />
+    <Compile Include="Store\StoreManager.cs" />
+    <Compile Include="Converters\DateConverters.cs" />
+    <Compile Include="Converters\ImageConverters.cs" />
+    <Compile Include="Converters\StringConverters.cs" />
+    <Compile Include="Cells\EventHeader.xaml.cs">
+      <DependentUpon>EventHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardView.cs" />
+    <Compile Include="Controls\HeaderDivider.xaml.cs">
+      <DependentUpon>HeaderDivider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SectionDivider.xaml.cs">
+      <DependentUpon>SectionDivider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FooterDivider.xaml.cs">
+      <DependentUpon>FooterDivider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EventDetailsViewModel.cs" />
+    <Compile Include="Services\ReminderService.cs" />
+    <Compile Include="Util\Settings.cs" />
+    <Compile Include="Helpers\MessageKeys.cs" />
+    <Compile Include="Controls\AlwaysScrollView.cs" />
+    <Compile Include="Interfaces\IToast.cs" />
+    <Compile Include="Interfaces\IWiFiConfig.cs" />
+    <Compile Include="Models\AppPage.cs" />
+    <Compile Include="Pages\iOS\RootPageiOS.cs" />
+    <Compile Include="Controls\AppNavigationPage.cs" />
+    <Compile Include="Pages\Sessions\SessionsPage.xaml.cs">
+      <DependentUpon>SessionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MiniHacks\MiniHacksPage.xaml.cs">
+      <DependentUpon>MiniHacksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FeedViewModel.cs" />
+    <Compile Include="Models\Tweet.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Speaker.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Interfaces\ILaunchTwitter.cs" />
+    <Compile Include="Interfaces\ISessionStore.cs" />
+    <Compile Include="Store\SessionStore.cs" />
+    <Compile Include="Interfaces\ISpeakerStore.cs" />
+    <Compile Include="Interfaces\IFavoriteStore.cs" />
+    <Compile Include="Models\Favorite.cs" />
+    <Compile Include="Interfaces\ICategoryStore.cs" />
+    <Compile Include="Interfaces\IFeedbackStore.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Interfaces\INotificationStore.cs" />
+    <Compile Include="Store\NotificationStore.cs" />
+    <Compile Include="Services\FavoriteService.cs" />
+    <Compile Include="Pages\Events\EventListPage.xaml.cs">
+      <DependentUpon>EventListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Events\EventDetailsPage.xaml.cs">
+      <DependentUpon>EventDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NonScrollableListView.cs" />
+    <Compile Include="Pages\Sessions\SessionDetailsPage.xaml.cs">
+      <DependentUpon>SessionDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SessionDetailsViewModel.cs" />
+    <Compile Include="Store\FeedbackStore.cs" />
+    <Compile Include="Pages\Speakers\SpeakerDetailsPage.xaml.cs">
+      <DependentUpon>SpeakerDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SpeakerDetailsViewModel.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Controls\ParallaxScrollView.cs" />
+    <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="Pages\Sessions\FeedbackPage.xaml.cs">
+      <DependentUpon>FeedbackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FeedbackViewModel.cs" />
+    <Compile Include="Controls\StarBehavior.cs" />
+    <Compile Include="ViewModels\EvaluationsViewModel.cs" />
+    <Compile Include="Cells\TextViewValue1.cs" />
+    <Compile Include="Controls\LabelSection.xaml.cs">
+      <DependentUpon>LabelSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Util\JwtUtility.cs" />
+    <Compile Include="Util\JwtClaimNames.cs" />
+    <Compile Include="Util\InvalidTokenException.cs" />
+    <Compile Include="Cells\TweetCell.xaml.cs">
+      <DependentUpon>TweetCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SessionsViewModel.cs" />
+    <Compile Include="Extensions\SessionStateExtensions.cs" />
+    <Compile Include="Store\CategoryStore.cs" />
+    <Compile Include="Store\MiniHacksStore.cs" />
+    <Compile Include="Store\SpeakerStore.cs" />
+    <Compile Include="Store\SponsorStore.cs" />
+    <Compile Include="Store\FavoriteStore.cs" />
+    <Compile Include="Interfaces\IMiniHacksStore.cs" />
+    <Compile Include="Models\MiniHack.cs" />
+    <Compile Include="Interfaces\ISponsorStore.cs" />
+    <Compile Include="Cells\SessionCellView.xaml.cs">
+      <DependentUpon>SessionCellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FavoriteImage.cs" />
+    <Compile Include="ViewModels\MiniHacksViewModel.cs" />
+    <Compile Include="Pages\MiniHacks\MiniHacksDetailsPage.xaml.cs">
+      <DependentUpon>MiniHacksDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MiniHackDetailsViewModel.cs" />
+    <Compile Include="Cells\MiniHackCell.xaml.cs">
+      <DependentUpon>MiniHackCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\RatingConverter.cs" />
+    <Compile Include="Cells\SpeakerCellView.xaml.cs">
+      <DependentUpon>SpeakerCellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Android\RootPageAndroid.cs" />
+    <Compile Include="Pages\Android\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationView.cs" />
+    <Compile Include="Interfaces\IFileWriter.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\INotificationManager.cs" />
+    <Compile Include="Pages\Home\FeedsPage.xaml.cs">
+      <DependentUpon>FeedsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FeaturedEventDataModel.cs" />
+    <Compile Include="Models\SessionDataModel.cs" />
+    <Compile Include="Services\AndroidReminderService.cs" />
+    <Compile Include="Helpers\IDeviceService.cs" />
+    <Compile Include="ViewModels\FavoriteViewModel.cs" />
+    <Compile Include="Pages\Favorites\FavoritesPage.xaml.cs">
+      <DependentUpon>FavoritesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FavoriteDataTemplateSelector.cs" />
+    <Compile Include="ViewModels\FavoriteItemsViewModel.cs" />
+    <Compile Include="Extensions\FavoriteExtension.cs" />
+    <Compile Include="Pages\Feedback\RatingPage.xaml.cs">
+      <DependentUpon>RatingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\ImageResourceExtension.cs" />
+    <Compile Include="Restclient\Request.cs" />
+    <Compile Include="Extensions\JsonExtension.cs" />
+    <Compile Include="Services\APIServices.cs" />
+    <Compile Include="Models\APISessionModel.cs" />
+    <Compile Include="Models\APIEventModel.cs" />
+    <Compile Include="Pages\Chat\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Chat\UsersPage.xaml.cs">
+      <DependentUpon>UsersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GoogleSigninView.cs" />
+    <Compile Include="Helpers\IAndroidGoogleAuth.cs" />
+    <Compile Include="Controls\FeedsLabelSection.xaml.cs">
+      <DependentUpon>FeedsLabelSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommonEvents\CommonEventListPage.xaml.cs">
+      <DependentUpon>CommonEventListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventCategory.cs" />
+    <Compile Include="Cells\EventCategoryCell.xaml.cs">
+      <DependentUpon>EventCategoryCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Info\InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule\SchedulePage.xaml.cs">
+      <DependentUpon>SchedulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ScheduleViewModel.cs" />
+    <Compile Include="ViewModels\ScheduleItemViewModel.cs" />
+    <Compile Include="Helpers\ScheduleTemplateSelector.cs" />
+    <Compile Include="Models\CacheUser.cs" />
+    <Compile Include="Helpers\IFileHelper.cs" />
+    <Compile Include="ViewModels\InfoViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Interfaces\IPushNotification.cs" />
+    <Compile Include="Pages\Info\CodeOfConductPage.xaml.cs">
+      <DependentUpon>CodeOfConductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sponsors\SponsorsPage.xaml.cs">
+      <DependentUpon>SponsorsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SponsorsViewModel.cs" />
+    <Compile Include="Pages\Sponsors\SponsorDetailsPage.xaml.cs">
+      <DependentUpon>SponsorDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SponsorDetailsViewModel.cs" />
+    <Compile Include="Cells\SponsorCell.xaml.cs">
+      <DependentUpon>SponsorCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Info\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Info\WifiInformationPage.xaml.cs">
+      <DependentUpon>WifiInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ConferenceInfoViewModel.cs" />
+    <Compile Include="Pages\Info\VenuePage.xaml.cs">
+      <DependentUpon>VenuePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\VenueViewModel.cs" />
+    <Compile Include="Pages\Info\FloorMap.xaml.cs">
+      <DependentUpon>FloorMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Info\FloorMapsPage.xaml.cs">
+      <DependentUpon>FloorMapsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PinchToZoomContainer.cs" />
+    <Compile Include="Pages\Info\EvaluationPage.xaml.cs">
+      <DependentUpon>EvaluationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EvaluationViewModel.cs" />
+    <Compile Include="Models\APIAttendeeModel.cs" />
+    <Compile Include="Pages\Speakers\SpeakersPage.xaml.cs">
+      <DependentUpon>SpeakersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Speakers\AttendeesPage.xaml.cs">
+      <DependentUpon>AttendeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SpeakerViewModel.cs" />
+    <Compile Include="Models\Attendee.cs" />
+    <Compile Include="ViewModels\AttendeeViewModel.cs" />
+    <Compile Include="ViewModels\AttendeesDetailViewModel.cs" />
+    <Compile Include="Pages\Speakers\AttendeeDetailPage.xaml.cs">
+      <DependentUpon>AttendeeDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Pages\Chat\ChatRoomPage.xaml.cs">
+      <DependentUpon>ChatRoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ChatRoomVieModel.cs" />
+    <Compile Include="Controls\ChatListView.cs" />
+    <Compile Include="Pages\CommonEvents\MyNetworks.xaml.cs">
+      <DependentUpon>MyNetworks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\QRCodeCellView.xaml.cs">
+      <DependentUpon>QRCodeCellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\QRCodeViewModel.cs" />
+    <Compile Include="Models\QRCode.cs" />
+    <Compile Include="Pages\Chat\GoogleLogin.xaml.cs">
+      <DependentUpon>GoogleLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChatUser.cs" />
+    <Compile Include="Cells\RoundedStack.cs" />
+    <Compile Include="Pages\CommonEvents\QRCodeDetailPage.xaml.cs">
+      <DependentUpon>QRCodeDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BackgroundColor.cs" />
+    <Compile Include="Models\GoogleUser.cs" />
+    <Compile Include="Helpers\IGoogleService.cs" />
+    <Compile Include="Helpers\IAndroidAuth.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Models\POICategory.cs" />
+    <Compile Include="Models\POISubCategory.cs" />
+    <Compile Include="Models\POIItem.cs" />
+    <Compile Include="Cells\POIHeader.xaml.cs">
+      <DependentUpon>POIHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\POIExtensions.cs" />
+    <Compile Include="Pages\CommonEvents\POISubCategoryPage.xaml.cs">
+      <DependentUpon>POISubCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommonEvents\POIItemPage.xaml.cs">
+      <DependentUpon>POIItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonEnums\CommonEnums.cs" />
+    <Compile Include="Models\Venue.cs" />
+    <Compile Include="Models\ConferenceFloor.cs" />
+    <Compile Include="Models\ConductCode.cs" />
+    <Compile Include="Models\Wifi.cs" />
+    <Compile Include="Models\RealmSetting.cs" />
+    <Compile Include="Interfaces\IInputAlert.cs" />
+    <Compile Include="Views\FacebookProfileCsPage.cs" />
+    <Compile Include="Views\GoogleProfileCsPage.cs" />
+    <Compile Include="Views\MainCsPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Humanizer, Version=1.37.7.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.1.37.7\lib\portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Humanizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions, Version=1.8.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.0.5\lib\portable-net45+wp80+win8+wpa81\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Client.3.0.3\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.3.0.3\lib\portable-win+net45+wp8+wpa81+monotouch10+monoandroid10+xamarinios10\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmHelpers, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Refractored.MvvmHelpers.1.0.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\MvvmHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.1.3.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+XamariniOS1\NodaTime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=2.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Connectivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=2.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Connectivity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Plugin.Permissions.1.1.7\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Permissions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Plugin.Permissions.1.1.7\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Permissions.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="FormsToolkit">
+      <HintPath>..\packages\FormsToolkit.1.1.18\lib\portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\FormsToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Calendars.Abstractions">
+      <HintPath>..\packages\CClarke.Plugin.Calendars.0.6.0-beta\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Calendars.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Calendars">
+      <HintPath>..\packages\CClarke.Plugin.Calendars.0.6.0-beta\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Realm.DataBinding">
+      <HintPath>..\packages\Realm.DataBinding.1.1.0\lib\netstandard1.0\Realm.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\packages\Realm.Database.1.5.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\packages\Realm.1.5.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.6\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.6\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.6\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\netstandard1.0\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps">
+      <HintPath>..\packages\Xam.Plugin.ExternalMaps.4.0.1\lib\netstandard1.0\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Messaging.4.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\packages\Xam.Plugins.Messaging.4.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.269-pre2\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView.Platform">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.XamForms.PullToRefresh">
+      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.2.0.0-alpha10\lib\portable-net45+wp80+win8+wpa81\Refractored.XamForms.PullToRefresh.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\packages\Plugin.Share.7.0.2-beta27\lib\netstandard1.0\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\packages\Plugin.Share.7.0.2-beta27\lib\netstandard1.0\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core">
+      <HintPath>..\packages\PInvoke.Windows.Core.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32">
+      <HintPath>..\packages\PInvoke.Kernel32.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt">
+      <HintPath>..\packages\PInvoke.BCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt">
+      <HintPath>..\packages\PInvoke.NCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.NCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth">
+      <HintPath>..\packages\Xamarin.Auth.1.5.0.3\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10\Xamarin.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\portable-net45+netcore45+wpa81+wp8\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\portable-net45+netcore45+wpa81+wp8\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms">
+      <HintPath>..\packages\ZXing.Net.Mobile.Forms.2.1.12\lib\portable-net45+netcore45+wp8+UAP10.0+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ZXing.Net.Mobile.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Windows\MenuPageUWP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Events\EventPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\Info\GoogleLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Chat\LoginWithRealmPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Accounts\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Fody.2.0.6\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.0.6\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+  <Import Project="..\packages\Realm.Database.1.5.0\build\Realm.Database.targets" Condition="Exists('..\packages\Realm.Database.1.5.0\build\Realm.Database.targets')" />
+  <Import Project="..\packages\Realm.1.5.0\build\Realm.targets" Condition="Exists('..\packages\Realm.1.5.0\build\Realm.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+</Project>

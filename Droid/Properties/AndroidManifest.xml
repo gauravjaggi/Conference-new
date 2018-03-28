@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0" package="com.pht.conference" android:installLocation="auto" android:versionCode="1">
+	<uses-sdk android:minSdkVersion="15" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_CALENDAR" />
+	<uses-permission android:name="android.permission.WRITE_CALENDAR" />
+	<application android:label="EventList">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyC_tNtmaVpiNNeevqZ_u7sN5n176FeRDXM" />
+	</application>
+</manifest>

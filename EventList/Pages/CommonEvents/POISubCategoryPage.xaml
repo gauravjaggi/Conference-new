@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="EventList.Pages.CommonEvents.POISubCategoryPage"
+    xmlns:local="clr-namespace:EventList;assembly=EventList"
+    Title="POI SubCategory"  BackgroundImage="">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{DynamicResource CardSpacing}">
+        <ListView 
+                x:Name="lvPoiSubCategories" 
+                ItemsSource="{Binding POISubCategoriesGrouped}"
+                GroupDisplayBinding="{Binding Key}" 
+                IsGroupingEnabled="true" 
+                HasUnevenRows="true" 
+                AbsoluteLayout.LayoutFlags="All" 
+                AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                BackgroundColor="White">
+            <ListView.SeparatorColor>
+                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" />
+            </ListView.SeparatorColor>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.Height>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" />
+                        </ViewCell.Height>
+                        <local:POIHeader />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell StyleId="disclosure">
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="8,10,8,10">
+                            <Label Text="{Binding Title}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventItemTitle" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

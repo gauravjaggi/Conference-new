@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False"  
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventList.Pages.Chat.ChatRoomPage" 
+             xmlns:local="clr-namespace:EventList;assembly=EventList" BackgroundImage="BackgroundImage.png" Title="Chat Messages">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="btnLogout"  Icon="logout.png" Clicked="OnLogout" />
+    </ContentPage.ToolbarItems>
+    <StackLayout x:Name="parentLayout" VerticalOptions="FillAndExpand" Spacing="0">
+        <ListView 
+                x:Name="lvMessages" 
+                ItemsSource="{Binding Messages}" 
+                HasUnevenRows="True" 
+                ItemSelected="OnItemSelected" 
+                ItemTapped="OnItemTapped" 
+                SeparatorVisibility="None"
+                VerticalOptions="EndAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="5,5,5,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="80*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label FontAttributes="Bold" FontSize="Micro" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0"  Grid.Column="0" Text="{Binding FullName}" TextColor="Black"/>
+                            <Frame Padding="10,10,10,10" CornerRadius="5" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" BackgroundColor="#428edf">
+                                <StackLayout>
+                                   <Label TextColor="White"  Text="{Binding Text}" />
+                               </StackLayout>
+                            </Frame>
+                            <Label FontSize="Micro" Grid.Row="1"  Grid.Column="1" Text="{Binding MessageTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Gray"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid x:Name="sendStacklayout"  HorizontalOptions="FillAndExpand"  VerticalOptions="EndAndExpand" Padding="10,0,10,0">
+            <Image Grid.Row="0" Grid.Column="0" Source="ChatMessageText.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+            <Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="smily.png" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit"/>
+                <Entry Grid.Column="1" x:Name="txtMessage" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Placeholder="Message" Text="{Binding OutGoingText}" Keyboard="Chat" />
+                <Image Grid.Column="2" x:Name="btnSend" HeightRequest="40" Source="Send.png" HorizontalOptions="Center" VerticalOptions="Center"  Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSendClicked" Command="{Binding SendMessageCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </Grid>
+        <!--<StackLayout x:Name="sendStacklayout" Orientation="Horizontal" Padding="10" BackgroundColor="#EFEFEF" VerticalOptions="EndAndExpand">
+            <Entry x:Name="txtMessage" HorizontalOptions="FillAndExpand" HeightRequest="25" Placeholder="Message" Text="{Binding OutGoingText}" Keyboard="Chat" />
+            <Button x:Name="btnSend" Text="Send" Clicked="OnSendClicked" Command="{Binding SendMessageCommand}" />
+        </StackLayout>-->
+    </StackLayout>
+</ContentPage>

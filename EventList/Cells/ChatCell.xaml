@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="EventList.ChatCell"
+    xmlns:local="clr-namespace:EventList;assembly=EventList" BackgroundImage="">
+	<Grid ColumnSpacing="2" Padding="5">
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--<local:RoundedStack 
+            Grid.Row="0"
+            Grid.Column="0" 
+            WidthRequest="40"
+            HeightRequest="40"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand"
+            BackgroundColor="#000000">
+            <Label 
+                Text="{Binding ShortName}" 
+                HorizontalOptions="Center" 
+                VerticalTextAlignment="Center" 
+                HorizontalTextAlignment="Center" 
+                 VerticalOptions="CenterAndExpand" TextColor="White" FontSize="12"/>  
+    
+        </local:RoundedStack>-->
+       <Label 
+            FontAttributes="Bold"
+            FontSize="Micro" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Text="{Binding FullName}" TextColor="Black"/>  
+        <Frame Grid.Row="1"  BackgroundColor="{Binding Background}">
+            <StackLayout>
+                <Label TextColor="{Binding TextColor}" Text="{Binding Text}" />
+            </StackLayout>
+        </Frame>
+        
+        <Label FontSize="Micro" Grid.Row="2"  Text="{Binding MessageTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Gray"></Label>  
+    </Grid>
+</ContentView>

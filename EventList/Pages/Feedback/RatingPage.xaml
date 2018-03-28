@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventList.Pages.Feedback.RatingPage" 
+             Title="Feedback" xmlns:local="clr-namespace:EventList;assembly=EventList" BackgroundImage="">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RatingVisibleConverter x:Key="RatingVisibleConverter" />
+            <local:RatingConverter x:Key="RatingConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <local:AlwaysScrollView Grid.RowSpan="2" x:Name="MainScroll">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource ThemeColor}" Padding="{StaticResource StandardPadding}">
+                    <Label Text="FEEDBACK" FontAttributes="Bold" FontSize="18" FontFamily="sans-serif-light" HorizontalOptions="FillAndExpand" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <Label Text="Title and Description Consistent with Content" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Grid HeightRequest="24" WidthRequest="24" x:Name="contentGrid">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="contentstarOne" GroupName="contentStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarOne},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="contentstarTwo" GroupName="contentStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarTwo},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="contentstarThree" GroupName="contentStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarThree},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="contentstarFour" GroupName="contentStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarFour},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--D not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="contentstarFive" GroupName="contentStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarFive},Path=IsStarred}" />
+                        </Grid>
+                    </StackLayout>
+                    <Label  x:Name="lblContentRating" IsVisible="false" Text="{Binding Source={x:Reference contentstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <Label Text="Well Organized/Clear Presentation" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Grid HeightRequest="24" WidthRequest="24" x:Name="presentationGrid">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="presstarOne" GroupName="presStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarOne}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="presstarTwo" GroupName="presStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarTwo}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="presstarThree" GroupName="presStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarThree}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="presstarFour" GroupName="presStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarFour},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--D not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="presstarFive" GroupName="presStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarFive},Path=IsStarred}" />
+                        </Grid>
+                    </StackLayout>
+                    <Label  x:Name="lblPresRating" IsVisible="false" Text="{Binding Source={x:Reference presstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <Label Text="Public Speaking Skills" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Grid HeightRequest="24" WidthRequest="24" x:Name="skillGrid">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="skillstarOne" GroupName="skillStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarOne}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="skillstarTwo" GroupName="skillStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarTwo}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="skilltarThree" GroupName="skillStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skilltarThree}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="skillstarFour" GroupName="skillStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarFour},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--D not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="skillstarFive" GroupName="skillStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarFive},Path=IsStarred}" />
+                        </Grid>
+                    </StackLayout>
+                    <Label x:Name="lblskillRating" IsVisible="false" Text="{Binding Source={x:Reference skillstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRelevantClicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="{Binding ContentRelevanceIS}"/>
+                    <Label Text="he content of event was relevant to my work" Style="{DynamicResource EvolveListItemTextStyle}" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <Label Text="The event provided information or techniques I can apply to my work right away" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Grid HeightRequest="24" WidthRequest="24" x:Name="workGrid">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="workstarOne" GroupName="workStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarOne}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="workstarTwo" GroupName="workStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarTwo}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="workstarThree" GroupName="workStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarThree}, Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--Do not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="workstarFour" GroupName="workStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarFour},Path=IsStarred}" />
+                        </Grid>
+                        <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                            <Grid.Behaviors>
+                                <!--D not remove name as it is used in binding-->
+                                <local:StarBehavior x:Name="workstarFive" GroupName="workStar" />
+                            </Grid.Behaviors>
+                            <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                            <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarFive},Path=IsStarred}" />
+                        </Grid>
+                    </StackLayout>
+                    <Label x:Name="lblworkRating" IsVisible="false" Text="{Binding Source={x:Reference workstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRecommendedClicked"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="{Binding RecommendedIS}"/>
+                    <Label Text="I would recommend this event to a colleague" Style="{DynamicResource EvolveListItemTextStyle}" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <Label Text="Comments" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    <Editor Text="{Binding Comments}" x:Name="comments" BackgroundColor="#FAFAFA" HeightRequest = "100" />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                    <Label Text="Notes" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    <Editor x:Name="notes" BackgroundColor="#FAFAFA" HeightRequest = "100" Text="{Binding Notes}"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource ThemeColor}" Padding="{StaticResource StandardPadding}">
+                    <Label Text="Submit Feedback" FontAttributes="Bold" FontSize="18" FontFamily="sans-serif-light" HorizontalOptions="Center" TextColor="White">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSubmitClicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </local:AlwaysScrollView>
+
+    <!--<local:AlwaysScrollView Grid.RowSpan="2" x:Name="MainScroll">
+        <StackLayout>
+            <local:CardView>
+                <StackLayout Spacing="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="34" />
+                        </Grid.ColumnDefinitions>
+                        <local:LabelSection Text="FEEDBACK" />
+                    </Grid>
+                    <local:HeaderDivider />
+                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <Label Text="Title and Description Consistent with Content" Style="{DynamicResource EvolveListItemTextStyle}" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid HeightRequest="24" WidthRequest="24" x:Name="contentGrid">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="contentstarOne" GroupName="contentStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarOne},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="contentstarTwo" GroupName="contentStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarTwo},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="contentstarThree" GroupName="contentStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarThree},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="contentstarFour" GroupName="contentStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarFour},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--D not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="contentstarFive" GroupName="contentStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference contentstarFive},Path=IsStarred}" />
+                            </Grid>
+                        </StackLayout>
+                        <Label  x:Name="lblContentRating" IsVisible="false" Text="{Binding Source={x:Reference contentstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    
+                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <Label Text="Well Organized/Clear Presentation" Style="{DynamicResource EvolveListItemTextStyle}" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid HeightRequest="24" WidthRequest="24" x:Name="presentationGrid">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="presstarOne" GroupName="presStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarOne}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="presstarTwo" GroupName="presStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarTwo}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="presstarThree" GroupName="presStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarThree}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="presstarFour" GroupName="presStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarFour},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--D not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="presstarFive" GroupName="presStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference presstarFive},Path=IsStarred}" />
+                            </Grid>
+                        </StackLayout>
+                        <Label  x:Name="lblPresRating" IsVisible="false" Text="{Binding Source={x:Reference presstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <Label Text="Public Speaking Skills" Style="{DynamicResource EvolveListItemTextStyle}" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid HeightRequest="24" WidthRequest="24" x:Name="skillGrid">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="skillstarOne" GroupName="skillStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarOne}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="skillstarTwo" GroupName="skillStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarTwo}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="skilltarThree" GroupName="skillStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skilltarThree}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="skillstarFour" GroupName="skillStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarFour},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--D not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="skillstarFive" GroupName="skillStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference skillstarFive},Path=IsStarred}" />
+                            </Grid>
+                        </StackLayout>
+                         <Label x:Name="lblskillRating" IsVisible="false" Text="{Binding Source={x:Reference skillstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                         <StackLayout.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="OnRelevantClicked"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="{Binding ContentRelevanceIS}"/>
+                        <Label Text="The content of the workshop was relavant to my work" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <Label Text="The workshop provided information or techniques I can apply to my work right away" Style="{DynamicResource EvolveListItemTextStyle}" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Grid HeightRequest="24" WidthRequest="24" x:Name="workGrid">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="workstarOne" GroupName="workStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarOne}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="workstarTwo" GroupName="workStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarTwo}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="workstarThree" GroupName="workStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarThree}, Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--Do not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="workstarFour" GroupName="workStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarFour},Path=IsStarred}" />
+                            </Grid>
+                            <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
+                                <Grid.Behaviors>
+                                    --><!--D not remove name as it is used in binding--><!--
+                                    <local:StarBehavior x:Name="workstarFive" GroupName="workStar" />
+                                </Grid.Behaviors>
+                                <Image Source="{local:ImageResource EventList.Images.star_outline.png}" />
+                                <Image Source="{local:ImageResource EventList.Images.star_selected.png}" IsVisible="{Binding Source={x:Reference workstarFive},Path=IsStarred}" />
+                            </Grid>
+                        </StackLayout>
+                         <Label x:Name="lblworkRating" IsVisible="false" Text="{Binding Source={x:Reference workstarFive},Path=Rating, Converter={StaticResource RatingConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="Status" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <StackLayout.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="OnRecommendedClicked"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="{Binding RecommendedIS}"/>
+                        <Label Text="I would recommend this workshop to a colleague" Style="{DynamicResource EvolveListItemTextStyle}" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <Label Text="Comments" Style="{DynamicResource EvolveListItemTextStyle}" />
+                        <Editor Text="{Binding Comments}" x:Name="comments" BackgroundColor="#FAFAFA" HeightRequest = "100" />
+                    </StackLayout>
+                    <local:FooterDivider />
+                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="White" Padding="{StaticResource StandardPadding}">
+                        <Label Text="Notes" Style="{DynamicResource EvolveListItemTextStyle}" />
+                        <Editor x:Name="notes" BackgroundColor="#FAFAFA" HeightRequest = "100" Text="{Binding Notes}"/>
+                    </StackLayout>
+                    <local:FooterDivider />
+                </StackLayout>
+            </local:CardView>
+            <Button Text="Submit Feedback" Clicked="OnSubmitClicked"/>
+        </StackLayout>
+    </local:AlwaysScrollView>-->
+    
+</ContentPage>

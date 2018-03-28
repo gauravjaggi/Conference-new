@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventList.Pages.Events.EventDetailsPage"
+             xmlns:local="clr-namespace:EventList;assembly=EventList" 
+             xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
+             Title="Event Details" BackgroundColor="{DynamicResource WindowBackgroundTable}" BackgroundImage="BackgroundImage.png">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:HasReminderTextConverter x:Key="HasReminderTextConverter" />
+            <local:IsFavoriteDetailTextConverter x:Key="IsFavoriteDetailTextConverter" />
+            <local:EventDateDisplayConverter x:Key="EventDateDisplayConverter" />
+            <local:HasReminderEventTextConverter x:Key="HasReminderEventTextConverter" />
+            <toolkit:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <local:AlwaysScrollView Grid.RowSpan="2" x:Name="MainScroll">
+
+        <StackLayout Spacing="{DynamicResource CardSpacing}">
+
+            <!--This first stack is what overlays on top of the hero image-->
+            <StackLayout Padding="10,10,10,10" Opacity="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand">
+                <!--"{DynamicResource Primary}">-->
+                <Label Text="{Binding Event.Title}" FontSize="Medium" TextColor="Black" />
+                <!--Style="{DynamicResource EventTitleStyle}" StyleId="EventTitle" />-->
+                <Label Text="{Binding Event, Converter={StaticResource EventDateDisplayConverter}}" TextColor="Black" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="EventTime" />
+                <StackLayout Padding="0,16,0,0">
+                    <Label Text="{Binding Event.Description}" FontSize="Small" TextColor="Black" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventDescription" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Spacing="{DynamicResource CardSpacing}" Padding="{StaticResource StandardPadding}">
+                <!--Padding set dynamic in code behind-->
+
+                <local:CardView>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource ThemeColor}" Padding="{StaticResource StandardPadding}">
+                        <Label Text="{Binding Event.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}"  IsVisible="{Binding Session.FeedbackLeft, Converter={StaticResource InvertedBooleanConverter}}" FontAttributes="Bold" FontSize="18" FontFamily="sans-serif-light" HorizontalOptions="Center" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FavoriteCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+                </local:CardView>
+
+                <local:CardView>
+                    <StackLayout Spacing="0">
+                        <!--Rate-->
+                        <local:FeedsLabelSection Text="Leave Feedback" StyleId="FeedbackTitle" HorizontalOptions="Start" />
+                        <local:HeaderDivider />
+                        <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White" StyleId="RateCardBox">
+                            <Label Text="Thanks for your feedback!" HorizontalOptions="Center" IsVisible="{Binding Event.FeedbackLeft}" Style="{DynamicResource EvolveListItemTextStyle}" />
+                            <Button BackgroundColor="{DynamicResource ThemeColor}" IsVisible="{Binding Event.FeedbackLeft, Converter={StaticResource InvertedBooleanConverter}}" Text="Rate this Session" x:Name="ButtonRate">
+                                <Button.FontAttributes>
+                                    <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold" />
+                                </Button.FontAttributes>
+                               
+                                <Button.TextColor>
+                                    <OnPlatform x:TypeArguments="Color" Android="White" iOS="#000000" />
+                                </Button.TextColor>
+                                <Button.BorderWidth>
+                                    <OnPlatform x:TypeArguments="x:Double" iOS="1" />
+                                </Button.BorderWidth>
+                                <Button.BorderColor>
+                                    <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ButtonBorder}" />
+                                </Button.BorderColor>
+                            </Button>
+
+                            <Button 
+                                Text="{Binding IsReminderSet, Converter={StaticResource HasReminderEventTextConverter}}" 
+                                Command="{Binding ReminderCommand}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" 
+                                TextColor="#000000" BorderRadius="0" BorderWidth="0" FontSize="16" BackgroundColor="{DynamicResource ThemeColor}" BorderColor="Transparent"
+                                StyleId="iOSReminderButton">
+                                <Button.IsVisible>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false" />
+                                </Button.IsVisible>
+                            </Button>
+                            <Button Text="{Binding IsReminderSet, Converter={StaticResource HasReminderEventTextConverter}}" Command="{Binding ReminderCommand}" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="{DynamicResource ThemeColor}" StyleId="AndroidReminderButton">
+                                <Button.IsVisible>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true" />
+                                </Button.IsVisible>
+                            </Button>
+                        </StackLayout>
+                        <local:FooterDivider />
+                    </StackLayout>
+                </local:CardView>
+
+                <local:CardView>
+                    <Grid Padding="{StaticResource StandardPadding}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Location" Style="{DynamicResource EvolveListItemTextStyle}" TextColor="White" VerticalTextAlignment="Center" />
+                        <Label Grid.Column="1" HorizontalOptions="End" Text="{Binding Event.LocationName}" TextColor="White" Style="{DynamicResource EvolveListItemTextStyle}" VerticalTextAlignment="Center" StyleId="EventLocationRoom" />
+                    </Grid>
+                </local:CardView>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </local:AlwaysScrollView>
+
+    <!--<local:AlwaysScrollView>
+        <StackLayout Spacing="0" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">
+                <local:CardView>
+                    <StackLayout>
+                        <local:HeaderDivider />
+                        
+                        <StackLayout Padding="{StaticResource StandardPadding}">
+                            <Label Text="{Binding Event.Title}" TextColor="#000000" />--><!--Style="{DynamicResource EventTitleStyle}" StyleId="EventTitle" />--><!--
+                            <Label Text="{Binding Event, Converter={StaticResource EventDateDisplayConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="EventTime" />
+                            <StackLayout Padding="0,16,0,0">
+                                <Label Text="{Binding Event.Description}" FontSize="Micro" TextColor="Black" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventDescription" />
+                            </StackLayout>
+                        </StackLayout>
+                        
+                        <local:SectionDivider IsVisible="{Binding Event.StartTime.HasValue}" />
+                        
+                        <StackLayout Padding="16,0" IsVisible="{Binding Event.StartTime.HasValue}">
+                            --><!-- <Button 
+                            x:Name="FavoriteButtonAndroid"
+                            Text="{Binding Event.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}"
+                            Command="{Binding FavoriteCommand}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="{DynamicResource Primary}"
+                            BorderRadius="0"
+                            BorderWidth="0"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            BorderColor="Transparent"
+                            StyleId="FavoriteButton">
+                            <Button.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false"/>
+                            </Button.IsVisible>
+                        </Button>
+--><!--
+                            <Button Text="{Binding Event.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}" Command="{Binding FavoriteCommand}" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="#b03060" StyleId="FavoriteButton">
+                                --><!-- <Button.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true"/>
+                            </Button.IsVisible>--><!--
+                            </Button>
+                        </StackLayout>
+                        
+                        <local:SectionDivider />
+                        
+                        <StackLayout Spacing="0">
+                            --><!--Rate--><!--
+                            <local:FeedsLabelSection Text="Leave Feedback" StyleId="FeedbackTitle" HorizontalOptions="Start" />
+                            <local:HeaderDivider />
+                            <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White" StyleId="RateCardBox">
+                                <Label Text="Thanks for your feedback!" HorizontalOptions="Center" IsVisible="{Binding Event.FeedbackLeft}" Style="{DynamicResource EvolveListItemTextStyle}" />
+                                <Button IsVisible="{Binding Event.FeedbackLeft, Converter={StaticResource InvertedBooleanConverter}}" Text="Rate this Session" x:Name="ButtonRate">
+                                    <Button.FontAttributes>
+                                        <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold" />
+                                    </Button.FontAttributes>
+                                    <Button.BackgroundColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="#b03060" iOS="#b03060" />
+                                    </Button.BackgroundColor>
+                                    <Button.TextColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="White" iOS="#000000" />
+                                    </Button.TextColor>
+                                    <Button.BorderWidth>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="1" />
+                                    </Button.BorderWidth>
+                                    <Button.BorderColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ButtonBorder}" />
+                                    </Button.BorderColor>
+                                </Button>
+                            </StackLayout>
+                            <local:FooterDivider />
+                        </StackLayout>
+                        
+                        <local:SectionDivider IsVisible="{Binding Event.StartTime.HasValue}" />
+                        
+                        <StackLayout Padding="16,0" IsVisible="{Binding Event.StartTime.HasValue}">
+                            <Button 
+                                Text="{Binding IsReminderSet, Converter={StaticResource HasReminderEventTextConverter}}" 
+                                Command="{Binding ReminderCommand}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" 
+                                TextColor="#000000" BorderRadius="0" BorderWidth="0" FontSize="16" BackgroundColor="#b03060" BorderColor="Transparent"
+                                StyleId="iOSReminderButton">
+                                <Button.IsVisible>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false" />
+                                </Button.IsVisible>
+                            </Button>
+                            <Button Text="{Binding IsReminderSet, Converter={StaticResource HasReminderEventTextConverter}}" Command="{Binding ReminderCommand}" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="#b03060" StyleId="AndroidReminderButton">
+                                <Button.IsVisible>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true" />
+                                </Button.IsVisible>
+                            </Button>
+                        </StackLayout>
+                        
+                        <local:SectionDivider />
+                        
+                        <Grid Padding="{StaticResource StandardPadding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Location" Style="{DynamicResource EvolveListItemTextStyle}" VerticalTextAlignment="Center" />
+                            <Label Grid.Column="1" HorizontalOptions="End" Text="{Binding Event.LocationName}" Style="{DynamicResource EvolveListItemTextStyle}" TextColor="{DynamicResource DetailTextColor}" VerticalTextAlignment="Center" StyleId="EventLocationRoom" />
+                        </Grid>
+                        
+                        <local:FooterDivider />
+                    </StackLayout>
+                </local:CardView>
+            </StackLayout>
+        </StackLayout>
+    </local:AlwaysScrollView>-->
+</ContentPage>

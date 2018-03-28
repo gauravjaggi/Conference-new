@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\SplashScreen.storyboardc\01J-lp-oVM-view-Ze5-6b-2t3.nib">
+      <LogicalName>SplashScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</LogicalName>
+      <InterfaceDefinition>Resources/SplashScreen.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\SplashScreen.storyboardc\Info.plist">
+      <LogicalName>SplashScreen.storyboardc/Info.plist</LogicalName>
+      <InterfaceDefinition>Resources/SplashScreen.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\SplashScreen.storyboardc\UIViewController-01J-lp-oVM.nib">
+      <LogicalName>SplashScreen.storyboardc/UIViewController-01J-lp-oVM.nib</LogicalName>
+      <InterfaceDefinition>Resources/SplashScreen.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+  </ItemGroup>
+</Project>

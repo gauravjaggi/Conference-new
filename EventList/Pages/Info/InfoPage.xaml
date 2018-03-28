@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventList.Pages.Info.InfoPage" 
+             xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" 
+             xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
+             xmlns:local="clr-namespace:EventList" Title="Info" BackgroundColor="{DynamicResource WindowBackgroundTable}" BackgroundImage="">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+            <local:HumanizeDateConverter x:Key="HumanizeDateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <!--<local:AlwaysScrollView Grid.RowSpan="2">-->
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{DynamicResource CardSpacing}">
+            <!--<local:CardView>-->
+            <ListView x:Name="lvPoiCategories" ItemsSource="{Binding CategoriesGrouped}" GroupDisplayBinding="{Binding Key}" IsGroupingEnabled="true" HasUnevenRows="true" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="White">
+                <ListView.SeparatorColor>
+                    <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" />
+                </ListView.SeparatorColor>
+
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.Height>
+                                <OnPlatform x:TypeArguments="x:Double" iOS="35" />
+                            </ViewCell.Height>
+                            <local:POIHeader />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell StyleId="disclosure">
+                            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                <Grid Padding="16,5" ColumnSpacing="{StaticResource StandardSpacing}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding Image}" Aspect="AspectFit" HorizontalOptions="Center" HeightRequest="30" />
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="{StaticResource SmallSpacing}">
+                                        <Label Style="{DynamicResource EvolveListItemTextStyle}" TextColor="Black" Text="{Binding Title}"/>
+                                        <Label Style="{DynamicResource EvolveListItemDetailTextStyle}" TextColor="Black" Text="{Binding SubTitle}"/>
+                                    </StackLayout>
+                                </Grid>
+                                <!--<Label FontSize="Small" Text="{Binding Title}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventItemTitle" />
+                                    <Label FontSize="Micro" Text="{Binding SubTitle}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventItemTitle" />-->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--</local:CardView>-->
+        </StackLayout>
+    <!--</local:AlwaysScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventList.Pages.Events.EventPage" BackgroundColor="{DynamicResource WindowBackground}" BackgroundImage="BackgroundImage.png">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.33*"/>
+                    <ColumnDefinition Width="33.34*"/>
+                    <ColumnDefinition Width="33.33*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="Schedule.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedSchedule_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Schedule" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="Favorites.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedFavorites_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Favorites" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="Sessions.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedSession_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Sessions" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.33*"/>
+                    <ColumnDefinition Width="33.34*"/>
+                    <ColumnDefinition Width="33.33*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="MiniHacks.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedMiniHacks_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Mini-Hacks" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="FeaturedEvents.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedFeaturedEvent_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Featured Events" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="Speakers.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedSpeakers_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Speakers" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.33*"/>
+                    <ColumnDefinition Width="33.34*"/>
+                    <ColumnDefinition Width="33.33*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="Attendees.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedAttendees_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Attendess" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="MyNetwork.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedMyNetworks_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="My Networks" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="Attendees.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                       
+                    </Image>
+                    <Label Text="Evacuation" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="3" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.33*"/>
+                    <ColumnDefinition Width="33.34*"/>
+                    <ColumnDefinition Width="33.33*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="CommonEventImage.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedOtherImage_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Other Events" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>
+                <!--<StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="CommonEventImage.png" HeightRequest="50" HorizontalOptions="Center" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClickedOtherImage_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Other Events" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>-->
+                <!--<StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image Source="icon.png" HorizontalOptions="Center" Aspect="AspectFit"/>
+                    <Label Text="Conference ends today" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                </StackLayout>-->
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

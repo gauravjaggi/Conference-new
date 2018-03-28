@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="EventList.Pages.Favorites.FavoritesPage" xmlns:local="clr-namespace:EventList" 
+    xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" Title="{Binding Title}" BackgroundColor="{DynamicResource WindowBackground}"
+    xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:EventTimeDisplayConverter x:Key="EventTimeDisplayConverter" />
+            <local:EventDayNumberDisplayConverter x:Key="EventDayNumberDisplayConverter" />
+            <local:EventDayDisplayConverter x:Key="EventDayDisplayConverter" />
+            <local:EventColorDisplayConverter x:Key="EventColorDisplayConverter" />
+            <local:IsFavoriteDetailTextConverter x:Key="IsFavoriteDetailTextConverter" />
+            <toolkit:HexToColorConverter x:Key="StringToColorConverter" />
+            <toolkit:UpperTextConverter x:Key="UpperTextConverter" />
+            <local:SessionTimeDisplayConverter x:Key="SessionTimeDisplayConverter" />
+            <local:IsFilledIconConverter x:Key="IsFilledIconConverter" />
+            <DataTemplate x:Key="sessionTemplate">
+                <ViewCell>
+                    <Grid Padding="{DynamicResource StandardPadding}" ColumnSpacing="{StaticResource StandardSpacing}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.RowSpan="2" Text="{Binding FavoriteSession.Title}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="SessionItem" />
+                        <Label Grid.Row="2" Text="{Binding FavoriteSession.SpeakerNames}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="SpeakerNames" />
+                        <Label Grid.Row="3" VerticalOptions="End" Text="{Binding FavoriteSession, Converter={StaticResource SessionTimeDisplayConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="SessionTime" />
+                        <local:FavoriteImage StyleId="FavoriteButton" Grid.Column="2" Grid.Row="0" Source="{Binding FavoriteSession.IsFavorite, Converter={StaticResource IsFilledIconConverter}, ConverterParameter='heart'}" HorizontalOptions="End" VerticalOptions="Start" Aspect="AspectFit" />
+                        <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="24" Padding="0,4">
+                            <BoxView BackgroundColor="{Binding FavoriteSession.MainCategory.Color, Converter={StaticResource StringToColorConverter}}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="24">
+                                <BoxView.IsVisible>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true" />
+                                </BoxView.IsVisible>
+                            </BoxView>
+                            <StackLayout Padding="16,0" VerticalOptions="Center">
+                                <Label VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Micro" TextColor="White" x:Name="LabelBadgetName" Text="{Binding FavoriteSession.MainCategory.BadgeName, Converter={StaticResource UpperTextConverter}}" />
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="eventTemplate">
+                <ViewCell StyleId="disclosure">
+                    <Grid Padding="{StaticResource StandardPadding}" ColumnSpacing="{StaticResource StandardSpacing}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Spacing="{StaticResource SmallSpacing}" VerticalOptions="Center">
+                            <Grid>
+                                <Label Text="{Binding FavoriteEvent.StartTime, Converter={StaticResource EventDayNumberDisplayConverter}}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{DynamicResource EvolveListItemTextStyle}" TextColor="White" StyleId="EventItemCircleDate" />
+                            </Grid>
+                            <Label Text="{Binding FavoriteEvent.StartTime, Converter={StaticResource EventDayDisplayConverter}}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="EventItemDay" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding FavoriteEvent.Title}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventItemTitle" />
+                            <Label Text="{Binding FavoriteEvent, Converter={StaticResource EventTimeDisplayConverter}}" Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="EventItemTime" />
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <local:FavoriteDataTemplateSelector x:Key="favoriteDataTemplateSelector" SessionTemplate="{StaticResource sessionTemplate}" EventTemplate="{StaticResource eventTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ListView x:Name="ListViewFavorites" ItemsSource="{Binding FavoritesGrouped}" GroupDisplayBinding="{Binding Key}" IsGroupingEnabled="true" HasUnevenRows="true" CachingStrategy="RecycleElement" IsVisible="{Binding IsNotBusy}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="White"
+            ItemTemplate="{StaticResource favoriteDataTemplateSelector}" />
+        <StackLayout IsVisible="{Binding IsBusy}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <StackLayout.Orientation>
+                <OnPlatform x:TypeArguments="StackOrientation" iOS="Horizontal" />
+            </StackLayout.Orientation>
+            <ActivityIndicator IsRunning="{Binding IsBusy}">
+                <ActivityIndicator.Color>
+                    <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}" />
+                </ActivityIndicator.Color>
+            </ActivityIndicator>
+            <Label Text="Loading Favorites..." HorizontalOptions="Center" Style="{DynamicResource EvolveListItemTextStyle}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

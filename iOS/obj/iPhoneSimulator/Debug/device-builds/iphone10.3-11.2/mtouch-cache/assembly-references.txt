@@ -1,0 +1,117 @@
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/iOS/bin/iPhoneSimulator/Debug/EventListiOS.exe
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/mscorlib.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.2.5.0.121934/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Core.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Mono.Security.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Xml.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.ComponentModel.Composition.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Collections.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.Debug.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Threading.Tasks.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Threading.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.ObjectModel.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Globalization.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.ComponentModel.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Xml.ReaderWriter.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Reflection.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Linq.Expressions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.IO.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Dynamic.Runtime.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.2.5.0.121934/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.2.5.0.121934/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/../../64bits/Xamarin.iOS.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Net.Http.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Runtime.Serialization.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.ServiceModel.Internals.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.Extensions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Linq.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Reflection.Extensions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/EventList/bin/Debug/EventList.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Newtonsoft.Json.11.0.1-beta1/lib/netstandard2.0/Newtonsoft.Json.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/netstandard.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Data.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Numerics.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Transactions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Mono.Data.Tds.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.StackTrace.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/OpenTK-1.0.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Globalization.Extensions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.IO.Compression.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.IO.Compression.FileSystem.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.InteropServices.RuntimeInformation.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.Serialization.Xml.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.Serialization.Primitives.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Security.Cryptography.Algorithms.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Security.SecureString.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Web.Services.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.Xml.Linq.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Xml.XPath.XDocument.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.2.5.0.121934/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Text.RegularExpressions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/iOS/bin/iPhoneSimulator/Debug/Realm.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.IO.FileSystem.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.InteropServices.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Runtime.Handles.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Remotion.Linq.2.1.1/lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Linq.Queryable.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Reflection.TypeExtensions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Console.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Reflection.Primitives.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/System.Runtime.CompilerServices.Unsafe.4.3.0/lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.Tools.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Refractored.MvvmHelpers.1.3.0/lib/netstandard1.0/MvvmHelpers.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/EventList/bin/Debug/NodaTime.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Microsoft.Azure.Mobile.Client.3.0.3/lib/Xamarin.iOS10/Microsoft.WindowsAzure.Mobile.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Resources.ResourceManager.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Net.Primitives.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Microsoft.Azure.Mobile.Client.SQLiteStore.3.0.3/lib/portable-win+net45+wp8+wpa81+monotouch10+monoandroid10+xamarinios10/Microsoft.WindowsAzure.Mobile.SQLiteStore.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/SQLitePCLRaw.core.1.1.6/lib/Xamarin.iOS10/SQLitePCLRaw.core.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/SQLitePCLRaw.bundle_green.1.1.6/lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.6/lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/CClarke.Plugin.Calendars.0.6.0-beta/lib/Xamarin.iOS10/Plugin.Calendars.Abstractions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/FormsToolkit.1.1.18/lib/Xamarin.iOS10/FormsToolkit.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Plugin.Permissions.1.2.1/lib/Xamarin.iOS10/Plugin.Permissions.Abstractions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xam.Plugins.Settings.2.5.1.0/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Net.Requests.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xam.Plugins.Messaging.4.0.0/lib/Xamarin.iOS10/Plugin.Messaging.Abstractions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/iOS/bin/iPhoneSimulator/Debug/Realm.Sync.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Collections.Concurrent.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/Facades/System.Threading.Timer.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Realm.DataBinding.1.1.0/lib/Xamarin.iOS10/Realm.DataBinding.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.Maps.2.4.0.269-pre2/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.CarouselView.2.3.0-pre1/lib/Xamarin.iOS10/Xamarin.Forms.CarouselView.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.CarouselView.2.3.0-pre1/lib/Xamarin.iOS10/Xamarin.Forms.CarouselView.Platform.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.CarouselView.2.3.0-pre1/lib/Xamarin.iOS10/Xamarin.Forms.CarouselView.iOS.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/ZXing.Net.Mobile.Forms.2.1.12/lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/ZXing.Net.Mobile.2.1.12/lib/Xamarin.iOS10/zxing.portable.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/ZXing.Net.Mobile.2.1.12/lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Humanizer.1.37.7/lib/portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Humanizer.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xam.Plugins.Settings.2.5.1.0/lib/Xamarin.iOS10/Plugin.Settings.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xam.Plugins.Messaging.4.0.0/lib/Xamarin.iOS10/Plugin.Messaging.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/CClarke.Plugin.Calendars.0.6.0-beta/lib/Xamarin.iOS10/Plugin.Calendars.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Plugin.Permissions.1.2.1/lib/Xamarin.iOS10/Plugin.Permissions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/EventList/bin/Debug/Plugin.Connectivity.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/EventList/bin/Debug/Plugin.Connectivity.Abstractions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xam.Plugin.ExternalMaps.4.0.1/lib/Xamarin.iOS10/Plugin.ExternalMaps.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xam.Plugin.ExternalMaps.4.0.1/lib/Xamarin.iOS10/Plugin.ExternalMaps.Abstractions.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Google.iOS.SignIn.4.0.1.2/lib/Xamarin.iOS10/Google.SignIn.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Firebase.iOS.InstanceID.1.0.8.1/lib/Xamarin.iOS10/Firebase.InstanceID.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Firebase.iOS.Core.3.4.6/lib/Xamarin.iOS10/Firebase.Core.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Firebase.iOS.Analytics.3.6.0.2/lib/Xamarin.iOS10/Firebase.Analytics.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Google.iOS.Core.3.0.3.3/lib/Xamarin.iOS10/Google.Core.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/ZXing.Net.Mobile.Forms.2.1.12/lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/ZXing.Net.Mobile.2.1.12/lib/Xamarin.iOS10/ZXingNetMobile.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Xamarin.Forms.Maps.2.4.0.269-pre2/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/FormsToolkit.1.1.18/lib/Xamarin.iOS10/FormsToolkit.iOS.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Microsoft.Azure.Mobile.Client.3.0.3/lib/Xamarin.iOS10/Microsoft.WindowsAzure.Mobile.Ext.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/SQLitePCL.3.8.7.2/lib/Xamarin.iOS10/SQLitePCL.Ext.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/SQLitePCL.3.8.7.2/lib/Xamarin.iOS10/SQLitePCL.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Refractored.XamForms.PullToRefresh.2.0.0-alpha10/lib/Xamarin.iOS10/Refractored.XamForms.PullToRefresh.iOS.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/packages/Refractored.XamForms.PullToRefresh.2.0.0-alpha10/lib/Xamarin.iOS10/Refractored.XamForms.PullToRefresh.dll
+/Users/seefat/Desktop/VIrender Latest Code/conferencerealm/Components/ToastIOS-1.6/lib/ios-unified/ToastIOS.dll

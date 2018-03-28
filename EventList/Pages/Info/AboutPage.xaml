@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EventList.Pages.Info.AboutPage" xmlns:local="clr-namespace:EventList;assembly=EventList" xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit" Title="About this app">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <local:AlwaysScrollView Grid.RowSpan="2">
+        <StackLayout Spacing="0">
+            <StackLayout BackgroundColor="{DynamicResource WindowBackgroundTable}" Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">
+                <local:CardView>
+                    <StackLayout Spacing="0">
+                        <local:LabelSection>
+                            <local:LabelSection.Text>
+                                <OnPlatform x:TypeArguments="x:String" Android="About the App" iOS=" " WinPhone="About the App" />
+                            </local:LabelSection.Text>
+                        </local:LabelSection>
+                        <local:HeaderDivider />
+                        <local:NonScrollableListView x:Name="ListViewAbout" ItemsSource="{Binding AboutItems}" RowHeight="80">
+                            <local:NonScrollableListView.SeparatorColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" />
+                            </local:NonScrollableListView.SeparatorColor>
+                            <local:NonScrollableListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Name}" TextColor="Black" Detail="{Binding Subtitle}" StyleId="disclosure" Command="{Binding Command}" CommandParameter="{Binding Parameter}" />
+                                </DataTemplate>
+                            </local:NonScrollableListView.ItemTemplate>
+                        </local:NonScrollableListView>
+                        <local:FooterDivider />
+                        <StackLayout>
+                            <StackLayout.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" iOS="16,8,16,0" Android="16,8" WinPhone="16,8" />
+                            </StackLayout.Padding>
+                            <Label Text="Copyright 2016 - Xamarin Inc." Style="{DynamicResource EvolveListItemDetailTextStyle}" />
+                        </StackLayout>
+                    </StackLayout>
+                </local:CardView>
+                <local:CardView>
+                    <StackLayout Spacing="0">
+                        <local:LabelSection Text="Technology Used" />
+                        <local:HeaderDivider />
+                        <local:NonScrollableListView x:Name="ListViewTechnology" ItemsSource="{Binding TechnologyItems}" RowHeight="80">
+                            <local:NonScrollableListView.SeparatorColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" />
+                            </local:NonScrollableListView.SeparatorColor>
+                            <local:NonScrollableListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Name}" TextColor="Black" Detail="{Binding Subtitle}" StyleId="disclosure"  Command="{Binding Command}" 
+                                               CommandParameter="{Binding Parameter}" />
+                                </DataTemplate>
+                            </local:NonScrollableListView.ItemTemplate>
+                        </local:NonScrollableListView>
+                        <local:FooterDivider />
+                        <StackLayout>
+                            <StackLayout.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" iOS="16,8,16,0" Android="16,8" WinPhone="16,8" />
+                            </StackLayout.Padding>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="8 more than 92" Style="{DynamicResource EvolveListItemDetailTextStyle}">
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </local:CardView>
+            </StackLayout>
+        </StackLayout>
+    </local:AlwaysScrollView>
+</ContentPage>

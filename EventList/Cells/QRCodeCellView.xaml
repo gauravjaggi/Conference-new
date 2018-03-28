@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="EventList.QRCodeCellView"
+    xmlns:local="clr-namespace:EventList;assembly=EventList">
+	<StackLayout Spacing="{DynamicResource CardSpacing}" Padding="10">
+        <local:CardView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Padding="10,0,0,0">
+                <Label Text="{Binding Code}" Style="{DynamicResource EvolveListItemTextStyle}" TextColor="#000000"/>
+            </StackLayout>
+        </local:CardView>
+    </StackLayout>
+</ContentView>

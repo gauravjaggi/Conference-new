@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="EventList.SpeakerCellView"
+    xmlns:local="clr-namespace:EventList;assembly=EventList">
+    <ContentPage.Resources>
+     <ResourceDictionary>
+        <local:SpeakerImageConverter x:Key="SpeakerImageConverter" />
+     </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentView.Content>
+     <Grid Padding="16,5" ColumnSpacing="{StaticResource StandardSpacing}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="User1.png" Aspect="AspectFit" HorizontalOptions="Center" HeightRequest="60" />
+            <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="{StaticResource SmallSpacing}">
+                <Label Style="{DynamicResource EvolveListItemTextStyle}" TextColor="Black" Text="{Binding FullName}"/>
+                <Label Style="{DynamicResource EvolveListItemDetailTextStyle}" TextColor="Black" Text="{Binding Title}"/>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

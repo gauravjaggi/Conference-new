@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="EventList.Pages.Speakers.AttendeeDetailPage"
+     xmlns:local="clr-namespace:EventList;assembly=EventList"
+    xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit" 
+    Title="Attendee Info" BackgroundColor="{DynamicResource WindowBackgroundTable}" BackgroundImage="BackgroundImage.png">
+    
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SpeakerImageConverter x:Key="SpeakerImageConverter" />
+            <toolkit:HasDataConverter x:Key="GenericIsVisibleConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid  Padding="{StaticResource StandardPadding}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" x:Name="Row1Header" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid RowSpacing="0" ColumnSpacing="0" x:Name="HeaderView">
+            <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="{Binding Attendee.PhotoUrl, Converter={StaticResource SpeakerImageConverter}}" Aspect="AspectFill" />
+        </Grid>
+        
+        <local:ParallaxScrollView x:Name="MainScroll" Grid.RowSpan="2">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" x:Name="Row1Content" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" x:Name="MainStack" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image Grid.Row="0" Source="User1.png" HeightRequest="80" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" />
+                    
+                    <StackLayout Grid.Row="1" Padding="{StaticResource StandardPadding}" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="{Binding Attendee.FullName}" FontSize="18" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" Android="sans-serif-light" iOS="HelveticaNeue-Light" />
+                            </Label.FontFamily>
+                        </Label>
+                        <Label x:Name="SpeakerTitle" Text="{Binding Attendee.Title}" FontSize="12" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </StackLayout>
+                </Grid>
+                
+                <StackLayout Grid.Row="1" Spacing="0">
+                    <!--<StackLayout BackgroundColor="{DynamicResource WindowBackgroundTable}" Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">-->
+                        <!--Biography-->
+                        <!--<local:CardView>-->
+                            <StackLayout Spacing="0">
+                                
+                                <local:LabelSection Text="Biography" />
+                                
+                                <local:HeaderDivider />
+                                
+                                <StackLayout Padding="{StaticResource StandardPadding}">
+                                    <Label Text="{Binding Attendee.Biography}" FontSize="Micro" TextColor="Black" Style="{DynamicResource EvolveListItemTextStyle}" />
+                                </StackLayout>
+                                
+                                <local:FooterDivider />
+                            </StackLayout>
+                        <!--</local:CardView>-->
+                        
+                        <!--<local:CardView IsVisible="{Binding FollowItems, Converter={StaticResource GenericIsVisibleConverter}}">-->
+                            <StackLayout Spacing="0">
+                                <!--Follow-->
+                                <local:LabelSection Text="Follow" />
+                                <local:HeaderDivider />
+                                <local:NonScrollableListView ItemsSource="{Binding FollowItems}" VerticalOptions="Start" x:Name="ListViewFollow" SelectedItem="{Binding SelectedFollowItem, Mode=TwoWay}" RowHeight="44">
+                                    <local:NonScrollableListView.SeparatorColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" />
+                                    </local:NonScrollableListView.SeparatorColor>
+                                    <local:NonScrollableListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell StyleId="disclosure">
+                                                <Grid ColumnSpacing="{StaticResource StandardSpacing}">
+                                                    <Grid.Padding>
+                                                        <OnPlatform x:TypeArguments="Thickness" iOS="0,12" Android="16,8" />
+                                                    </Grid.Padding>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image VerticalOptions="Center" Source="{Binding Icon}">
+                                                        <Image.IsVisible>
+                                                            <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" />
+                                                        </Image.IsVisible>
+                                                    </Image>
+                                                    <Label Grid.Column="1" VerticalOptions="Center" FontSize="Small" Style="{DynamicResource EvolveListItemTextStyle}" Text="{Binding Name}" />
+                                                    <Label Grid.Column="2" VerticalOptions="Center" FontSize="Micro" Style="{DynamicResource EvolveListItemTextStyle}" TextColor="{DynamicResource DetailTextColor}" Text="{Binding Subtitle}">
+                                                        <Label.IsVisible>
+                                                            <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" />
+                                                        </Label.IsVisible>
+                                                    </Label>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </local:NonScrollableListView.ItemTemplate>
+                                </local:NonScrollableListView>
+                                <local:FooterDivider />
+                            </StackLayout>
+                        <!--</local:CardView>-->
+
+                    <!--</StackLayout>-->
+                </StackLayout>
+            </Grid>
+        </local:ParallaxScrollView>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventList.Pages.CommonEvents.POIItemPage" 
+             xmlns:local="clr-namespace:EventList;assembly=EventList" BackgroundImage="">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{DynamicResource CardSpacing}">
+        <ListView x:Name="lvItems" ItemsSource="{Binding POIItems}" HasUnevenRows="true" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="White">
+            <ListView.SeparatorColor>
+                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" />
+            </ListView.SeparatorColor>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout  BackgroundColor="#e8e8e8" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <BoxView HeightRequest="15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                            <StackLayout Spacing="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                <StackLayout VerticalOptions="Center">
+                                    <StackLayout.BackgroundColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="#428edf" Android="#428edf"/>
+                                    </StackLayout.BackgroundColor>
+                                    <StackLayout.Padding>
+                                        <OnPlatform x:TypeArguments="Thickness" iOS="5,0" Android="5,8"/>
+                                    </StackLayout.Padding>
+                                    <Label Text="{Binding Title}"  HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start">
+                                        <Label.FontAttributes>
+                                            <OnPlatform x:TypeArguments="FontAttributes" Android="Bold" iOS="Bold"/>
+                                        </Label.FontAttributes>
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="16" Android="18"/>
+                                        </Label.FontSize>
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String" Android="sans-serif-light"/>
+                                        </Label.FontFamily>
+                                        <Label.TextColor>
+                                            <OnPlatform x:TypeArguments="Color" iOS="White" Android="White" />
+                                        </Label.TextColor>
+                                    </Label>
+                                </StackLayout>
+                                <Grid BackgroundColor="White" Padding="8">
+                                    <Label Grid.Row="0" Text="{Binding SubTitle}" TextColor="{DynamicResource ThemeColor}" />
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70*"/>
+                                        <ColumnDefinition Width="30*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Description}" TextColor="#666666" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Start" />
+                                    <Label Text="{Binding Time}" TextColor="#666666" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" />
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
